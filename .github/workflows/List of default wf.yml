@@ -1,0 +1,20 @@
+name: List of default workFlow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ubantu-evvironment-variables:
+    runs-on: ubuntu-latest 
+    steps:
+      - run: env
+    
+  widows-environment-variables:
+    runs-on: windows-latest
+    steps:
+      - run: env
+  
+  mac-environment-variables:
+    runs-on: macos-latest
+    steps:
+      - run: env
