@@ -1,0 +1,26 @@
+name: "Customer Environment Setup"
+
+on:
+  workflow_dispatch:
+
+env:
+  Day_week_end: "Saturday, Sunday"
+  testvar: "value1"
+
+jobs:
+  mainjob:
+    name: "Print Environment Variables"
+    runs-on: ubuntu-latest
+
+    env:
+      Greating: "Hello"
+      testvar: "value2"
+    steps:
+      - name: "Print the Environment Variables"
+        run: |
+          echo " $Greating ,$firstname Today is $Day_week_end "
+          echo "Test Variable is $testvar"
+          echo "testvar ${{env.testvar}}"
+        env:
+          firstname: "John"
+          testvar: "value3"
