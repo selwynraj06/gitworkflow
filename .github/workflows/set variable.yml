@@ -1,0 +1,17 @@
+name: "Set Environment Variables"
+
+on:  workflow_dispatch
+
+jobs:
+  Set_Environment_Variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Set the value"
+        id: step_one
+        run: |
+          echo "action_state=Yellow" >> $GITHUB_ENV
+
+      - name: "Use the value"
+        id: step_two
+        run: |
+          echo "The value of action_state is ${{env.action_state}}"
